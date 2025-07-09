@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(184, 3, 184);
+    text-align: center;
+    margin: 90px;
+}
+
+h1 {
+    color: white;
+font-size: 40px;
+}
+
+p {color: white;
+    font-size: 20px;
+}
+
+img {
+width: 350px;
+height: 350px;
+border-radius: 10px;
+border-color: brown;
+
+}
+
+.formulaire {
+background-color: rgb(240, 96, 221);
+margin: 10px;
+}
+
+
+@media screen and (max-width: 768px){
+
+.body {
+    display: flex;
+}
+
+
+.formulaire-inscription  {
+flex-wrap: wrap;
+text-align: center;
+padding: 10px;
+font-size: 20px;
+}
+
+
+.formulaire {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+}
