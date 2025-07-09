@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="confirmation.css">
-    <title>MINI INSTA</title>
+    <title>MONOCHROME</title>
 </head>
 <body>
-    <h1>MINI INSTA</h1>
+    <h1>MONOCHROME</h1>
     <h2>Upload réussi !</h2>
 
     <?php
@@ -17,9 +17,10 @@
     } else {
         echo "<p> Aucune image reçue.</p>";
     }
-  
+
     ?>
 
     <p><a href="index.php">Retour à l'accueil</a></p>
+
 </body>
 </html>

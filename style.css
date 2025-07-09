@@ -1,15 +1,15 @@
 body {
-    background-color: rgb(184, 3, 184);
+    background-image: url(euj1.jpg);
     text-align: center;
     margin: 90px;
 }
 
 h1 {
-    color: white;
+    color: rgb(160, 26, 26);
 font-size: 40px;
 }
 
-p {color: white;
+p {color: rgb(160, 26, 26);
     font-size: 20px;
 }
 
@@ -22,7 +22,7 @@ border-color: brown;
 }
 
 .formulaire {
-background-color: rgb(240, 96, 221);
+background-color: rgb(167, 43, 13);
 margin: 10px;
 }
 

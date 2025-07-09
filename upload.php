@@ -38,7 +38,8 @@ if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
     if (move_uploaded_file($tmp, $chemin)) {
         // Redirige vers confirmation.php avec le nom du fichier
         header("Location: confirmation.php?image=" . urlencode($nom));
-        echo "<p>Nom du fichier : <strong>$nomImage</strong></p>";
+        echo "<p>Nom du fichier : <strong>$nom</strong></p>";
+        
         exit;
     } else {
         echo " Erreur lors du déplacement du fichier.";
