@@ -1,57 +1,38 @@
-//<?php
-//if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
-  //  $tmpName = $_FILES['photo']['tmp_name'];
-   // $name = basename($_FILES['photo']['name']);
-    //$destination = 'uploads/' . $name;
-
-    //if (!is_dir('uploads')) {
-      //  mkdir('uploads', 0755, true);
-    //}
-
-    //if (move_uploaded_file($tmpName, $destination)) {
-        // ✅ Redirection vers une autre page après succès
-       // header("Location: confirmation.php");
-     //   exit;
-   // } else {
-    //    echo "Erreur lors de l'envoi de l'image.";
-  //  }
-//} else {
-  //  echo "Aucune image reçue.";
-//}
-
-?>
-
 
 <?php
-if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
+if (
+    isset($_FILES['photo']) && $_FILES['photo']['error'] === 0 &&
+    isset($_POST['description'])
+) {
     $tmp = $_FILES['photo']['tmp_name'];
-    $nom = basename($_FILES['photo']['name']);
+
+    // Extension du fichier original (.png, .jpg, etc.)
+    $extension = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
+
+    // Nom personnalisé (depuis le champ description)
+    $nom_personnalise = preg_replace('/[^a-zA-Z0-9_-]/', '_', $_POST['description']);
+    $auteur = preg_replace('/[^a-zA-Z0-9_-]/', '_', $_POST['auteur']);
+    // On reconstruit le nom final avec l’extension
+    $nom_fichier = $nom_personnalise . '.' . $extension;
+
     $dossier = 'uploads/';
-
-
     if (!is_dir($dossier)) {
-        mkdir($dossier, 0755, true); // Crée le dossier s'il n'existe pas
+        mkdir($dossier, 0755, true);
     }
 
-    $chemin = $dossier . $nom;
+    $chemin = $dossier . $nom_fichier;
 
     if (move_uploaded_file($tmp, $chemin)) {
-        // Redirige vers confirmation.php avec le nom du fichier
-        header("Location: confirmation.php?image=" . urlencode($nom));
-        echo "<p>Nom du fichier : <strong>$nom</strong></p>";
-        
+        // Redirection avec nom modifié
+        header("Location: confirmation.php?image=" . urlencode($nom_fichier));
         exit;
     } else {
-        echo " Erreur lors du déplacement du fichier.";
+        echo "Erreur lors du déplacement du fichier.";
     }
 } else {
-    echo "Aucun fichier reçu ou erreur dans le formulaire.";
+    echo "Aucun fichier reçu ou description manquante.";
 }
-
-
-
-
-
 ?>
+
 
 

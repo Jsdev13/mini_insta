@@ -2,24 +2,28 @@ body {
 
     background-image: url(backgg.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
     text-align: center;
 }
 
 h1 {
     color: rgb(177, 14, 14);
-    font-size: 35px;
+    font-size: 25px;
+    text-align: center;
 }
 
 
 h2 {
     color: rgb(184, 9, 9);
-    font-size: 45px;
+    font-size: 30px;
+    text-align: center;
 }
 
 p {
     color: rgb(172, 21, 21);
     font-size: 30px;
+    
 }
-
+img {
+    box-shadow: 0 16px 32px rgb(163, 5, 5);
+}
 

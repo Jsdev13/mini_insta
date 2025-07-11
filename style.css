@@ -6,19 +6,19 @@ body {
 
 h1 {
     color: rgb(160, 26, 26);
-font-size: 40px;
+    font-size: 40px;
 }
 
-p {color: rgb(160, 26, 26);
+p { color: rgb(160, 26, 26);
     font-size: 20px;
 }
 
 img {
-width: 350px;
+width: 300px;
 height: 350px;
-border-radius: 10px;
+border-radius: 20px;
 border-color: brown;
-
+box-shadow: 0 8px 16px rgb(167, 43, 13);
 }
 
 .formulaire {
@@ -31,8 +31,8 @@ margin: 10px;
 
 .body {
     display: flex;
+    
 }
-
 
 .formulaire-inscription  {
 flex-wrap: wrap;
@@ -41,11 +41,13 @@ padding: 10px;
 font-size: 20px;
 }
 
-
 .formulaire {
     display: flex;
     text-align: center;
     justify-content: center;
+    flex-direction: column;
+    font-size: 15px;
+
 }
 
 
