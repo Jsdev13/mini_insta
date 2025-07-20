@@ -1,5 +1,7 @@
 body {
     background-image: url(euj1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
     margin: 90px;
 }

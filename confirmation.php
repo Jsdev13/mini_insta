@@ -19,9 +19,12 @@
         echo "<p> Aucune image reçue.</p>";
     }
 
-    ?>
     
-    <p><a href="index.php">Retour à l'accueil</a></p>
+    ?>
+
+    <p><a href="index.php">MONOCHROME</a></p>
+
 
 </body>
 </html>
+
