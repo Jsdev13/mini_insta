@@ -61,9 +61,15 @@ if (is_dir($dossier)) {
             }
         }
         
+
+        
         // Ferme le dossier après lecture
         closedir($handle);
     }
+
+
+
+
 
 } else {
     // Message affiché si le dossier n'existe pas
@@ -72,6 +78,9 @@ if (is_dir($dossier)) {
 ?>
 
 </section>
+
+
+
 
 </body>
 </html>

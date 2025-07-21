@@ -28,7 +28,9 @@ if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
         mkdir($dossier, 0755, true);
     }
 
+    
     $chemin = $dossier . $nom_fichier;
+
 
     // Déplace le fichier dans le dossier
     if (move_uploaded_file($tmp, $chemin)) {
