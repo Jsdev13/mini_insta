@@ -1,29 +1,26 @@
 
 <?php
 
-// Vérifie que le formulaire a bien été soumis et que le fichier est présent
 if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
 
     $extension = strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
     $tmp = $_FILES['photo']['tmp_name'];
 
-    // Nom personnalisé basé sur la description
-    $nom_personnalise = preg_replace('/[^a-zA-Z0-9_-]/', '_', $_POST['description']);
-    $nom_fichier = $nom_personnalise . '.' . $extension;
 
     // Vérification des extensions autorisées
-    $extensions_autorisees = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
-    if (!in_array($extension, $extensions_autorisees)) {
+    $extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+    if (!in_array($extension, $extensions)) {
         echo "Extension de fichier non autorisée.";
         exit;
     }
 
-    // Vérifie que le fichier est bien une image
-    $check = getimagesize($tmp);
-    if ($check === false) {
-        echo "Le fichier n'est pas une image valide.";
-        exit;
-    }
+    // Nettoyage de la description
+    $description = isset($_POST['description']) ? $_POST['description'] : 'sans_description';
+    $description_clean = preg_replace('/[^a-zA-Z0-9_-]/', '_', strtolower($description));
+
+    // Ajoute la date au nom du fichier
+    $date = date('Y-m-d');
+    $nom_fichier = $date . '-' . $description_clean . '.' . $extension;
 
     // Crée le dossier si nécessaire
     $dossier = 'uploads/';
@@ -45,6 +42,7 @@ if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
     echo "Aucun fichier reçu ou erreur lors de l'envoi.";
 }
 ?>
+
 
 
 
